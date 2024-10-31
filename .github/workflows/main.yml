@@ -1,0 +1,22 @@
+name: PR Workflow
+
+on:
+  pull_request:
+    types: [opened]
+    branches:
+      - main
+
+jobs:
+  print-messages:
+    runs-on: ubuntu-latest
+    env:
+      MESSAGE_ENV: "Este es un mensaje de entorno"
+
+    steps:
+      - name: Imprimir mensaje de entorno
+        run: echo "Mensaje de entorno: ${{ env.MESSAGE_ENV }}"
+
+      - name: Imprimir mensaje de secreto
+        env:
+          SECRET_MESSAGE: ${{ secrets.SECRET_MESSAGE }}
+        run: echo "Mensaje de secreto: $SECRET_MESSAGE"
