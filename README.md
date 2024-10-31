@@ -6,4 +6,7 @@ Este repositorio contiene la primera tarea de la semana 1, donde se exploran los
 
 Readme update from branch 1
 
+![image](https://github.com/user-attachments/assets/01ce8e03-c8df-4eb6-844d-b0f64465c80f)
+
+
 
