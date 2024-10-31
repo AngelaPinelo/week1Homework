@@ -9,15 +9,15 @@ on:
 jobs:
   print-messages:
     runs-on: ubuntu-latest
-    env:
-      MESSAGE_ENV: "Este es un mensaje de entorno"
 
     steps:
       - name: Check out code
         uses: actions/checkout@v2
 
       - name: Imprimir mensaje de entorno
-        run: echo "Mensaje de entorno: ${{ env.MESSAGE_ENV }}"
+        env:
+          MESSAGE_ENV: "Este es un mensaje de entorno"
+        run: echo "Mensaje de entorno: $MESSAGE_ENV"
 
       - name: Imprimir mensaje de secreto
         env:
