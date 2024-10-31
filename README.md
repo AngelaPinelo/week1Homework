@@ -4,4 +4,6 @@
 
 Este repositorio contiene la primera tarea de la semana 1, donde se exploran los conceptos básicos de git. El objetivo es familiarizarse con el entorno y conocer sus funcionalidades
 
+Readme update from branch 1
+
 
