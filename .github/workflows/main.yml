@@ -1,4 +1,4 @@
-name: Test Secret Workflow
+name: Test Secret and Variable Workflow
 
 on:
   push:
@@ -6,15 +6,17 @@ on:
       - main
 
 jobs:
-  test-secret:
+  test-secret-and-variable:
     runs-on: ubuntu-latest
 
     steps:
       - name: Check out code
         uses: actions/checkout@v2
 
-      - name: Print Secret Message
+      - name: Print Secret and Environment Variable
         env:
           SECRET_MESSAGE: ${{ secrets.SECRET_MESSAGE }}
+          MESSAGE_ENV: ${{ vars.MESSAGE_ENV }}
         run: |
           echo "Mensaje de secreto: $SECRET_MESSAGE"
+          echo "Mensaje de entorno: $MESSAGE_ENV"
