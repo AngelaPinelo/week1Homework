@@ -1,25 +1,20 @@
-name: PR Workflow
+name: Test Secret Workflow
 
 on:
-  pull_request:
-    types: [opened]
+  push:
     branches:
       - main
 
 jobs:
-  print-messages:
+  test-secret:
     runs-on: ubuntu-latest
 
     steps:
       - name: Check out code
         uses: actions/checkout@v2
 
-      - name: Imprimir mensaje de entorno
-        env:
-          MESSAGE_ENV: "Este es un mensaje de entorno"
-        run: echo "Mensaje de entorno: $MESSAGE_ENV"
-
-      - name: Imprimir mensaje de secreto
+      - name: Print Secret Message
         env:
           SECRET_MESSAGE: ${{ secrets.SECRET_MESSAGE }}
-        run: echo "Mensaje de secreto: $SECRET_MESSAGE"
+        run: |
+          echo "Mensaje de secreto: $SECRET_MESSAGE"
